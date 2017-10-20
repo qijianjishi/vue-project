@@ -32,11 +32,16 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-            '/weapi/': {//需要匹配的路径
-                    target: 'http://music.163.com', //需要代理的目标服务器
+            '/v8/': {//需要匹配的路径
+                    target: 'https://c.y.qq.com', //需要代理的目标服务器
             　　　　 changeOrigin: true, //开启代理
-             　　　　pathRewrite: { '^/weapi/': '/weapi/' }  //这里重写路径/run就代理到对应地址
-            　　}
+             　　　　pathRewrite: { '^/v8/': '/v8/' }  //这里重写路径/run就代理到对应地址
+            　　},
+            '/api':{
+                      target:'http://localhost:3000',
+                      changeOrigin:true,
+                      pathRewrite: { '^/api': '/api' }
+                  }
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README

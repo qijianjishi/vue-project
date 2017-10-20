@@ -1,8 +1,8 @@
-<template>
-	<div>
+ <template>
+	<div class='ccc'>
 		<div class="songslist"><span>推荐歌单</span></div>
 		<div class="remd_ul">
-			<a class="remd_li">
+			<a class="remd_li" href="#">
 				<div class="remd_img">
 					<img class="u-img" src="http://p1.music.126.net/oZeExvlxR_c_4fJUyMUY-g==/109951163044279442.webp?imageView&thumbnail=369x0&quality=75&tostatic=0&type=webp">
 					<span class="listen">117.5万</span>					
@@ -11,7 +11,7 @@
 			</a>
 
 
-			<a class="remd_li">
+			<a class="remd_li" href="#">
 				<div class="remd_img">
 					<img class="u-img" src="http://p1.music.126.net/pg0ZZNW9gDM3kQn5J_3W4w==/109951163032868359.webp?imageView&thumbnail=369x0&quality=75&tostatic=0&type=webp">
 					<span class="listen">117.5万</span>					
@@ -20,7 +20,7 @@
 			</a>
 
 
-			<a class="remd_li">
+			<a class="remd_li" href="#">
 				<div class="remd_img">
 					<img class="u-img" src="http://p1.music.126.net/dlXhKkvCcbJ8hF6KPMJT7w==/19166686695756236.webp?imageView&thumbnail=369x0&quality=75&tostatic=0&type=webp">
 					<span class="listen">117.5万</span>					
@@ -30,8 +30,8 @@
 		</div>
 
 
-		<div class="remd_ur">
-			<a class="remd_li">
+		<div class="remd_ur" >
+			<a class="remd_li" href="#">
 				<div class="remd_img">
 					<img class="u-img" src="http://p1.music.126.net/3LbMYwTiQD5U3MCSgDPgdA==/109951163035317628.webp?imageView&thumbnail=369x0&quality=75&tostatic=0&type=webp">
 					<span class="listen">117.5万</span>					
@@ -40,7 +40,7 @@
 			</a>
 
 
-			<a class="remd_li">
+			<a class="remd_li" href="#">
 				<div class="remd_img">
 					<img class="u-img" src="http://p1.music.126.net/1BQFT-akODSLM93bj4CQ2Q==/109951163041556034.webp?imageView&thumbnail=369x0&quality=75&tostatic=0&type=webp">
 					<span class="listen">117.5万</span>					
@@ -49,7 +49,7 @@
 			</a>
 
 
-			<a class="remd_li">
+			<a class="remd_li" href="#">
 				<div class="remd_img">
 					<img class="u-img" src="http://p1.music.126.net/6QbE9r2JeqBz3j3Kva--4A==/109951163038217098.webp?imageView&thumbnail=369x0&quality=75&tostatic=0&type=webp">
 					<span class="listen">117.5万</span>					
@@ -97,6 +97,14 @@ export default {
 		float:left;
 		width:326px;
 		height:326px;
+		
+		text-decoration:none;
+		color:#000;
+	}
+	.remd_li{
+		text-decoration:none;
+		color:#000;
+		
 	}
 	.remd_ul .remd_li .remd_img{
 		position:relative;

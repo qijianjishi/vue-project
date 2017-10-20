@@ -1,94 +1,36 @@
 <template>
-	<div>
-		<div id="new"><span>{{music}}</span></div>
-		<div class="music_list">
+	<div id="aaa">
+		<div id="new"><span>最新音乐</span></div>
+		<div class="music_list" v-for="item in list.songlist">
 			<div class="list_li">
-				<div class="music_name">扎西德勒&nbsp<span>(电影《七十七天》主题曲)</span></div>
-				<div class="music_auth">江一燕-扎西德勒</div>
+				<div class="music_name">{{item.data.songname}}<span>{{item.data.albumname}}</span></div>
+				<div class="music_auth">{{item.data.singer[0].name}}</div>
 			</div>
 		</div>
-
-		<div class="music_list">
-			<div class="list_li">
-				<div class="music_name">理想三旬(live)&nbsp<span>(电影《七十七天》主题曲)</span></div>
-				<div class="music_auth">谢春花-音乐好朋友 第一季</div>
-			</div>
-		</div>
-
-
-		<div class="music_list">
-			<div class="list_li">
-				<div class="music_name">梨花颂&nbsp<span>(电影《七十七天》主题曲)</span></div>
-				<div class="music_auth">霍尊-梨花颂</div>
-			</div>
-		</div>
-
-
-		<div class="music_list">
-			<div class="list_li">
-				<div class="music_name">永不消逝&nbsp<span>电影《密战》片尾曲</span></div>
-				<div class="music_auth">金志文-永不消逝</div>
-			</div>
-		</div>
-
-
-		<div class="music_list">
-			<div class="list_li">
-				<div class="music_name">행복한 척 (Live)&nbsp<span></span></div>
-				<div class="music_auth">秀智-박진영의 파티피플 11회 </div>
-			</div>
-		</div>
-
-
-		<div class="music_list">
-			<div class="list_li">
-				<div class="music_name">Know My Style (Major Remix featuring Swagkelly &amp; 夏之禹)&nbsp<span></span></div>
-				<div class="music_auth">Cee / SwagKelly / 夏之禹-Know My Style (Major Remix featuring Swagkelly &amp; 夏之禹)</div>
-			</div>
-		</div>
-
-
-		<div class="music_list">
-			<div class="list_li">
-				<div class="music_name">不如没问过&nbsp<span></span></div>
-				<div class="music_auth">戴爱玲 / 国蛋-了不起寂寞</div>
-			</div>
-		</div>
-
-
-		<div class="music_list">
-			<div class="list_li">
-				<div class="music_name">再见理想 (Remix版) &nbsp<span>电影《缝纫机乐队》推广曲</span></div>
-				<div class="music_auth">大鹏 / 黄家驹-再见理想 (Remix版)</div>
-			</div>
-		</div>
-
-
-		<div class="music_list">
-			<div class="list_li">
-				<div class="music_name">重返魔域&nbsp<span>《魔域手游》主题曲</span></div>
-				<div class="music_auth">窦唯-重返魔域</div>
-			</div>
-		</div>
-
-
-		<div class="music_list">
-			<div class="list_li">
-				<div class="music_name">Is That For Me&nbsp<span></span></div>
-				<div class="music_auth">Alesso / Anitta-Is That For Me</div>
-			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
+	
   name: 'new_music',
-  data(){
+  data:function(){
   	return{
-  		music:"最新音乐"
+  		list : []
   	}
-  }
+  },mounted() {
+          
+           	var that = this
+	      	axios.get(`/v8/fcg-bin/fcg_v8_toplist_cp.fcg?g_tk=5381&uin=0&format=json&inCharset=utf-8&outCharset=utf-8&notice=0&platform=h5&needNewCode=1&tpl=3&page=detail&type=top&topid=4&_=1508306581587`)
+	      		.then(function (response){
+	      		console.log(response)
+		     
+		        that.list = response.data
+		        
+		    })            
+		}
 
 }
 
@@ -101,7 +43,7 @@ export default {
     	background:#fff;
     	font-size: 34px;
     	line-height: 90px;
-    	margin-top: 80px;
+    	margin-top: 850px;
 	}
 	#new span{
 		width:200px;
@@ -139,4 +81,4 @@ export default {
 		white-space: nowrap;
 		overflow: hidden;
 	}
-</style>
+</style> 
